@@ -1,81 +1,89 @@
 Proyecto Final JPA
 
-Este es un proyecto desarrollado en Java utilizando JPA (Java Persistence API) para la gestión de datos en una base de datos relacional. Implementa operaciones CRUD (Crear, Leer, Actualizar y Eliminar) con una estructura optimizada para el manejo de entidades.
+Este es un sistema de gestión desarrollado en Java utilizando JPA (Hibernate) para la persistencia de datos. Permite realizar operaciones CRUD sobre entidades en una base de datos relacional.
 
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-🚀 Tecnologías utilizadas
+Tecnologías Utilizadas 🚀
 
-Java (JDK 17 o superior)
+Java 17+
 
-JPA con Hibernate como proveedor de persistencia
+JPA (Hibernate)
 
 MySQL como base de datos
 
-Maven para la gestión de dependencias
+Maven como gestor de dependencias
 
-NetBeans / IntelliJ / Eclipse (cualquier IDE compatible)
+NetBeans / IntelliJ / Eclipse (IDE recomendado)
 
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-📂 Estructura del proyecto
+Instalación y Configuración ⚙️
 
-ProyectoFinalJPA/
+1. Clonar el repositorio 📂
 
-├── src/main/java/
+ git clone https://github.com/gabimac03/ProyectoFinalJPA.git
+ 
+ cd ProyectoFinalJPA
 
-│   ├── entidades/        # Clases de entidad JPA
+2. Configurar la base de datos 🛢️
 
-│   ├── dao/              # Clases de acceso a datos (DAO)
+Asegúrate de tener MySQL instalado y crea una base de datos:
 
-│   ├── servicios/        # Lógica de negocio
+CREATE DATABASE gestion_db;
 
-│   ├── utils/            # Configuración y utilidades
+Configura las credenciales en persistence.xml (ubicado en src/main/resources/META-INF/):
 
-│   ├── main/             # Clase principal del proyecto
+<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gestion_db"/>
 
-│
+<property name="javax.persistence.jdbc.user" value="root"/>
 
-├── src/main/resources/
+<property name="javax.persistence.jdbc.password" value="tu_contraseña"/>
 
-│   ├── META-INF/persistence.xml  # Configuración de JPA
+-----------------------------------------------------------------------------------------
 
-│
-
-├── pom.xml             # Archivo de configuración de Maven
-
-└── README.md           # Documentación del proyecto
-
-----------------------------------------------------------------------
-
-⚙️ Configuración del proyecto
-
-Configurar la base de datos:
-
-Crear una base de datos en MySQL con el nombre correspondiente (ej. proyecto_jpa).
-
-Configurar las credenciales en persistence.xml.
-
-----------------------------------------------------------------------
-
-Compilar y ejecutar:
+3. Compilar y ejecutar 🏃‍♂️
 
 mvn clean install
 
-mvn exec:java -Dexec.mainClass="main.Main"
+mvn exec:java
 
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-🛠️ Funcionalidades principales
+Estructura del Proyecto 📂
 
-✔️ Gestión de entidades mediante JPA✔️ Uso de anotaciones como @Entity, @Table, @Column, @Id, @GeneratedValue✔️ CRUD completo con EntityManager✔️ Manejo de relaciones @OneToMany, @ManyToOne✔️ Configuración en persistence.xml✔️ Conexión con MySQL a través de JDBC Driver
+ProyectoFinalJPA/
+├── src/main/java/com/gestion/
+│   ├── entidades/        # Clases de entidad JPA
+│   ├── repositorios/     # Interfaces DAO con JPA
+│   ├── servicios/        # Lógica de negocio
+│   ├── Main.java         # Punto de entrada del programa
+├── src/main/resources/META-INF/persistence.xml  # Configuración de JPA
+├── pom.xml              # Dependencias de Maven
+└── README.md            # Documentación
 
-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-📌 Contribuciones
+Uso 🖥️
 
-¡Siéntete libre de hacer un fork del repositorio y mejorar el proyecto! ✨
+Una vez ejecutado, puedes probar las operaciones CRUD:
 
-👨‍💻 Autor
+Crear una nueva entidad
 
-Ángel Gabriel Macocco
+Listar registros
+
+Actualizar datos
+
+Eliminar una entidad
+
+-----------------------------------------------------------------------------------------
+
+Contribuciones 🤝
+
+Si quieres contribuir, haz un fork del repositorio, realiza tus cambios y envía un pull request.
+
+-----------------------------------------------------------------------------------------
+
+🚀 Desarrollado por Ángel Gabriel Macocco
+
+
