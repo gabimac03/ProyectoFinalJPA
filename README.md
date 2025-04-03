@@ -54,12 +54,19 @@ Estructura del Proyecto 📂
 
 ProyectoFinalJPA/
 ├── src/main/java/com/gestion/
+
 │   ├── entidades/        # Clases de entidad JPA
+
 │   ├── repositorios/     # Interfaces DAO con JPA
+
 │   ├── servicios/        # Lógica de negocio
+
 │   ├── Main.java         # Punto de entrada del programa
+
 ├── src/main/resources/META-INF/persistence.xml  # Configuración de JPA
+
 ├── pom.xml              # Dependencias de Maven
+
 └── README.md            # Documentación
 
 -----------------------------------------------------------------------------------------
